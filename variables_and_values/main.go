@@ -50,4 +50,12 @@ func main() {
 	*/
 	//	This will give error, we could explicitly specify only a single type with multiple declarations
 	//	All the variables declared will be of type mentioned at the end of the statement
+
+	// declaring const values
+	const PI = 3.1415
+	var variableT = 1234
+
+	// PI = 9.8 // Error
+	variableT = 0 // possible
+	fmt.Print(variableT, "\n")
 }
