@@ -1,0 +1,20 @@
+Key Points on Packages
+
+- Every Go file must be a part of some package
+- Multiple files can be a part of the same package
+- Functions, Global Variables (package level variables) belonging to a 
+  package can be used across all files of a package without any importing
+- We could use more than one packages in our project for better organization 
+  of codebase
+- Every package must go into its own sub-folder, a single folder cannot have
+  multiple packages
+- To import a package in another package we need to specify the full path of the
+  package to be imported
+- Only functions and variables starting with capital letter are accessible in
+  other packages via importing
+- To use third party packages we need to use `go get <package-path>` to download
+  the package, downloaded packages are added as dependencies in go.mod file
+- `go get` without any package name downloads all the packages specified in the
+  go.mod file
+- A go module can contain multiple packages, most projects/applications have 
+  only one module but they can have multiple modules
