@@ -1,0 +1,7 @@
+Key points on functions
+
+- unlike other languages, in go we could return multiple values simply separating them by commas
+- any variables or constants that are defined in the function are scoped to that function
+- we can add constant and variable declarations outside of any functions, directly into the code file
+  and when we do that, that const or var is scoped to the entire code file instead of any function and hence
+  is available in all the functions of that package.
