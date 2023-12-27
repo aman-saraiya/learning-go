@@ -1,0 +1,14 @@
+Key points on 'pointers' in Go
+
+- Use Cases: Avoiding unnecessary value copies, direct value mutation
+- By default, go creates copy of all arguments when passed to functions
+  i.e. default behaviour is pass-by-value
+- The null value for a pointer is nil - a special value built into go
+- nil is a predeclared identifier representing the zero value for a pointer, 
+  channel, func, interface, map, or slice type.
+- nil represents the absence of an address value - i.e. a pointer pointing to 
+  no address / no value in memory
+- In Go, we cannot perform pointer arithmetic
+- 
+
+
