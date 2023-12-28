@@ -1,0 +1,17 @@
+Notes on Structs
+
+- Structs can be definied inside a function, but generally it is definied
+outside of it, so that it is available across entire package
+- We can start the struct name with a captial letter to allow it to be 
+imported and used in other packages
+- Functions attached to structs are called methods
+- We can write constructor functions in go but that is just a coding
+pattern followed in go, it is not a feature like methods baked into the 
+Go language
+- To use the variables/ functions/ struct etc from other packages their
+name must start with a capital letter. Similarly, to have access to the fields
+and methods of struct outside of the package we need to make the first letter
+capital.
+- It is common to name the constructor function as just `New`
+- Struct embedding is used to build up new structs from existing structs, it is 
+similar to inheritence in other Java/C++. Go doesn't have either classes or inheritence
