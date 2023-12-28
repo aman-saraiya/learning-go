@@ -52,4 +52,13 @@ func main() {
 
 	appUserConstructedPointer := newUserPointer("Cos", "Cot", "04/04/2004")
 	appUserConstructedPointer.displayUserMethod()
+
+	admin := NewAdmin("alpha@gmail.com", "alphapass")
+	adminAnonUser := NewAdminAnon("beta@gmail.com", "betapass")
+
+	// difference in accessing the fields depending on if the embedded
+	// struct is named or anon
+	fmt.Println(admin.user.firstName)
+	// fmt.Println(admin.firstName) // ERROR
+	fmt.Println(adminAnonUser.firstName)
 }
