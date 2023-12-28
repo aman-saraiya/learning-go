@@ -10,6 +10,27 @@ func main() {
 	*/
 
 	// loops
-	workingWithLoops()
+	/*
+		workingWithLoops()
+	*/
 
+	// infinte loop
+	/*
+		workingWithInfiniteLoops()
+	*/
+
+	// working with break and continue in loop
+	/*
+		loopWithBreakAndContinue()
+	*/
+
+	// conditional for loop
+	/*
+		conditionalForLoop()
+	*/
+
+	// Working with switch statement
+	/*
+		workingWithSwitch()
+	*/
 }

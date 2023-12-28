@@ -2,12 +2,9 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
-var accountBalance float64 = 10000
-
-func workingWithConditionals() {
+func workingWithSwitch() {
 	fmt.Println("Welcome to Go Bank!")
 	fmt.Println("What do you want to do?")
 	fmt.Println("1. Check Balance")
@@ -19,9 +16,13 @@ func workingWithConditionals() {
 	fmt.Print("Enter your choice: ")
 	fmt.Scan(&choice)
 	fmt.Println("Selected:", choice)
-	if choice == 1 {
+
+	// if we have different code segment to be executed for different
+	// values we could use switch statement instead of many if, else if blocks
+	switch choice {
+	case 1:
 		fmt.Println("Your Balance:", accountBalance)
-	} else if choice == 2 {
+	case 2:
 		var depositAmount float64
 		fmt.Print("Deposit Amount: ")
 		fmt.Scan(&depositAmount)
@@ -34,7 +35,7 @@ func workingWithConditionals() {
 		// equivalent to accountBalance = accountBalance + depositAmount
 		accountBalance += depositAmount
 		fmt.Println("New Balance:", accountBalance)
-	} else if choice == 3 {
+	case 3:
 		var withdrawAmount float64
 		fmt.Print("Deposit Amount: ")
 		fmt.Scan(&withdrawAmount)
@@ -49,9 +50,13 @@ func workingWithConditionals() {
 
 		accountBalance -= withdrawAmount
 		fmt.Println("New Balance:", withdrawAmount)
-
-	} else {
+	default:
 		fmt.Println("GoodBye!")
-		os.Exit(0)
+		break
 	}
+	// Note here we don't need to add break statements in each case, like we need in C/C++
 }
+
+// break keyword in switch statement has a special meaning
+// here it no longer breaks out of the closest sorrounding loop but
+// breaks out of the switch statement. But we don't generally need this feature.
