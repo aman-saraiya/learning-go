@@ -1,0 +1,19 @@
+Notes on error handling
+
+- In Go, we don't have try catch, try except blocks to handle errors 
+- Instead In Go, functions are written such and our functions must be
+written such that errors don't crash the application.
+- For operations that could fail, it is quite common that functions return 
+an error as a return value 
+- For example the os.ReadFile simply returns an empty bytes collection,
+if it fails to find a file and along with that it returns a second value 
+of type error
+- err is nil incase there's no failure
+- We can use `errors` package to generate custom errors that we can return from
+our functions
+
+- When dealing with errors in situations where we can't control the continue further
+execution, we need to exit out of the application
+- We can exit from the application using either os.Exit(), return (if possible), 
+or using the built in panic() function, we can also pass an error message to panic,
+as panic(<error-message>)
