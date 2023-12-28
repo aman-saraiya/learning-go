@@ -61,4 +61,8 @@ func main() {
 	fmt.Println(admin.user.firstName)
 	// fmt.Println(admin.firstName) // ERROR
 	fmt.Println(adminAnonUser.firstName)
+
+	// declaring and using variable of the custom type
+	var my_custom_string CustomString
+	my_custom_string.log()
 }
