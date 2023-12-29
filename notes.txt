@@ -16,3 +16,13 @@ capital.
 package for the struct. For instance errors package has errors.New 
 - Struct embedding is used to build up new structs from existing structs, it is 
 similar to inheritence in other Java/C++. Go doesn't have either classes or inheritence
+
+- Struct Tags
+- It is a feature built into Go.
+- Tags are essentially metadata that we can add to our struct fields
+and that metadata can then be picked up by any code or package that cares about it.
+
+syntax `key:"<string-value>"`
+
+example json.Marshall function uses the metadata, if it is defined that will
+be considered. `json: "<string-value>"`
