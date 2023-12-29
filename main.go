@@ -8,7 +8,7 @@ import (
 
 	// importing custom packages or third party packages
 	// module_path/package
-	"github.com/aman-saraiya/learning-go/notes_project/note"
+	"github.com/aman-saraiya/learning-go/interfaces/note"
 )
 
 func main() {
