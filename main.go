@@ -6,9 +6,8 @@ import (
 	"os"
 	"strings"
 
-	// importing custom packages or third party packages
-	// module_path/package
 	"github.com/aman-saraiya/learning-go/interfaces/note"
+	"github.com/aman-saraiya/learning-go/interfaces/todo"
 )
 
 func main() {
@@ -24,6 +23,20 @@ func main() {
 		fmt.Println("Saving the Note failed.")
 	} else {
 		fmt.Println("Note saved successfully to file.")
+	}
+
+	content = getTodoData()
+	myTodo, err := todo.New(content)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	myTodo.Display()
+	err = myTodo.Save()
+	if err != nil {
+		fmt.Println("Saving the Todo failed.")
+	} else {
+		fmt.Println("Todo saved successfully to file.")
 	}
 }
 
@@ -43,7 +56,12 @@ func getUserInput(prompt string) string {
 }
 
 func getNoteData() (string, string) {
-	title := getUserInput("Enter title: ")
-	content := getUserInput("Enter content: ")
+	title := getUserInput("Enter Note title: ")
+	content := getUserInput("Enter Note content: ")
 	return title, content
+}
+
+func getTodoData() string {
+	content := getUserInput("Enter Todo content: ")
+	return content
 }
