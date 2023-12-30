@@ -73,10 +73,8 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	// using embedded interface
 	outputData(myTodo)
-
-	// Using embedded interface
-
 }
 
 // we cannot specify note.Note or todo.Todo as input param type if we want
@@ -133,14 +131,4 @@ func getNoteData() (string, string) {
 func getTodoData() string {
 	content := getUserInput("Enter Todo content: ")
 	return content
-}
-
-// Function that can take any kind of value int, any struct, anything
-func doSomething(input interface{}) {
-
-}
-
-// we can also use `any`, it is an alias for this interface{}
-func doSomethingOne(input any) {
-
 }
