@@ -134,3 +134,13 @@ func getTodoData() string {
 	content := getUserInput("Enter Todo content: ")
 	return content
 }
+
+// Function that can take any kind of value int, any struct, anything
+func doSomething(input interface{}) {
+
+}
+
+// we can also use `any`, it is an alias for this interface{}
+func doSomethingOne(input any) {
+
+}
