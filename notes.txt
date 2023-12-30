@@ -1,0 +1,10 @@
+Notes on Interfaces
+- An interface is essentially a contract, that gaurantees that a certain value
+typically a struct has certain certain methods
+- Note and Todo structs are very similar and we need to have the functionality 
+to save the note and todo to a file, interfaces helps us use the same functions 
+for such use cases and help reduce code duplication
+- Unlike other programming languages we don't have to explicitly connect an 
+interaface to some other type to force that type to adhere to that interface.
+Instead Go reviews the value we pass in place of interface type and checks if 
+that value (Note, Todo here) follows the interface contract.
