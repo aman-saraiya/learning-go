@@ -29,6 +29,7 @@ func main() {
 	*/
 
 	// duplication removed using interfaces
+
 	saveData(myNote)
 
 	content = getTodoData()
@@ -50,11 +51,32 @@ func main() {
 
 	//duplication removed using interfaces
 	saveData(myTodo)
-
 	//NOTE: We're able to pass myTodo and myNote in place where a
 	// saver type is required because saver is an interface and it
 	// just enforces that a valid value for it must implement
 	// Save() method. And both Todo and Note have Save method.
+
+	fmt.Println()
+
+	title, content = getNoteData()
+	myNote, err = note.New(title, content)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	// Using embedded interface
+	outputData(myNote)
+
+	content = getTodoData()
+	myTodo, err = todo.New(content)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	outputData(myTodo)
+
+	// Using embedded interface
+
 }
 
 // we cannot specify note.Note or todo.Todo as input param type if we want
@@ -68,14 +90,24 @@ func saveData(dataStruct saver) {
 	}
 }
 
+func outputData(dataStruct outputtable) {
+	dataStruct.Display()
+	saveData(dataStruct)
+}
+
 // creating interface
+// side note, there's a convention in Go that if we define an interface with
+// only one method, than our interface name is method_name + "er", it's not a
+// must do but a common convention
 type saver interface {
 	Save() error
 }
 
-// side note, there's a convention in Go that if we define an interface with
-// only one method, than our interface name is method_name + "er", it's not a
-// must do but a common convention
+// embedding interfaces
+type outputtable interface {
+	saver
+	Display()
+}
 
 func getUserInput(prompt string) string {
 	fmt.Print(prompt)
