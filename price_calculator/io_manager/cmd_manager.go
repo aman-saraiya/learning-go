@@ -1,0 +1,34 @@
+package io_manager
+
+import "fmt"
+
+type CMDManager struct {
+}
+
+func (cmd CMDManager) ReadLines() ([]string, error) {
+	fmt.Println("Please enter your prices. Confirm every price with ENTER, and enter 0 to process.")
+
+	var prices []string
+
+	for {
+		var price string
+		fmt.Print("Price: ")
+		fmt.Scan(&price)
+
+		if price == "0" {
+			break
+		}
+		prices = append(prices, price)
+	}
+
+	return prices, nil
+}
+
+func (cmd CMDManager) WriteResult(data interface{}) error {
+	fmt.Println(data)
+	return nil
+}
+
+func NewCMDManager() CMDManager {
+	return CMDManager{}
+}
